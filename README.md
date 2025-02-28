@@ -25,9 +25,12 @@ User Profile Management
 .NET 8.0 SDK
 MongoDB Server
 Visual Studio 2022 or VS Code
+
+
 Nuget packages:
-<PackageReference Include="MongoDB.Driver" />
-<PackageReference Include="Microsoft.AspNetCore.Authentication.Cookies" />
+
+PackageReference Include="MongoDB.Driver" 
+PackageReference Include="Microsoft.AspNetCore.Authentication.Cookies" 
 
 Project Structure;
 MyMvcApp/
