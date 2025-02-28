@@ -1,0 +1,124 @@
+@model MyMvcApp.Models.Book
+
+@{
+    ViewData["Title"] = "Kitap Düzenle";
+}
+
+<h1>Kitap Düzenle</h1>
+
+<div class="row">
+    <div class="col-md-8">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            
+            <div class="form-group">
+                <label asp-for="Title" class="control-label">Başlık</label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Author" class="control-label">Yazar</label>
+                <input asp-for="Author" class="form-control" />
+                <span asp-validation-for="Author" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Category" class="control-label">Kategori</label>
+                <select asp-for="Category" class="form-control">
+                    <option value="">Kategori Seçin</option>
+                    <option value="Klasik">Klasik</option>
+                    <option value="Fantastik">Fantastik</option>
+                    <option value="Bilim Kurgu">Bilim Kurgu</option>
+                    <option value="Polisiye">Polisiye</option>
+                    <option value="Distopya">Distopya</option>
+                </select>
+                <span asp-validation-for="Category" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Price" class="control-label">Fiyat</label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Description" class="control-label">Açıklama</label>
+                <textarea asp-for="Description" class="form-control" rows="3"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ImageUrl" class="control-label">Resim URL</label>
+                <input asp-for="ImageUrl" class="form-control" />
+                <span asp-validation-for="ImageUrl" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="StockQuantity" class="control-label">Stok Miktarı</label>
+                <input asp-for="StockQuantity" class="form-control" />
+                <span asp-validation-for="StockQuantity" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ISBN" class="control-label">ISBN</label>
+                <input asp-for="ISBN" class="form-control" />
+                <span asp-validation-for="ISBN" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <div class="form-check">
+                    <input asp-for="IsFeatured" class="form-check-input" type="checkbox" />
+                    <label asp-for="IsFeatured" class="form-check-label">Öne Çıkan</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="form-check">
+                    <input asp-for="IsPopular" class="form-check-input" type="checkbox" />
+                    <label asp-for="IsPopular" class="form-check-label">Popüler</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="form-check">
+                    <input asp-for="IsDiscounted" class="form-check-input" type="checkbox" id="isDiscounted" />
+                    <label asp-for="IsDiscounted" class="form-check-label">İndirimli</label>
+                </div>
+            </div>
+
+            <div class="form-group" id="discountedPriceGroup" style="display: none;">
+                <label asp-for="DiscountedPrice" class="control-label">İndirimli Fiyat</label>
+                <input asp-for="DiscountedPrice" class="form-control" />
+                <span asp-validation-for="DiscountedPrice" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mt-3">
+                <input type="submit" value="Kaydet" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-secondary">Listeye Dön</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+        $(document).ready(function() {
+            // İndirim checkbox'ı değiştiğinde indirimli fiyat alanını göster/gizle
+            $('#isDiscounted').change(function() {
+                if(this.checked) {
+                    $('#discountedPriceGroup').show();
+                } else {
+                    $('#discountedPriceGroup').hide();
+                }
+            });
+
+            // Sayfa yüklendiğinde indirim durumunu kontrol et
+            if($('#isDiscounted').is(':checked')) {
+                $('#discountedPriceGroup').show();
+            }
+        });
+    </script>
+} 

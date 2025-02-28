@@ -1,0 +1,69 @@
+@model IEnumerable<MyMvcApp.Models.Book>
+
+@{
+    ViewData["Title"] = "Kitaplar";
+}
+
+<h1>Kitaplar</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Yeni Kitap Ekle</a>
+</p>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                @if (!string.IsNullOrEmpty(item.ImageUrl))
+                {
+                    <img src="@item.ImageUrl" class="card-img-top" alt="@item.Title" style="height: 300px; object-fit: cover;">
+                }
+                else
+                {
+                    <img src="/images/no-image.jpg" class="card-img-top" alt="No Image" style="height: 300px; object-fit: cover;">
+                }
+                <div class="card-body">
+                    <h5 class="card-title">@item.Title</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">@item.Author</h6>
+                    <p class="card-text">@item.Description</p>
+                    <p class="card-text"><small class="text-muted">Kategori: @item.Category</small></p>
+                    <p class="card-text"><small class="text-muted">ISBN: @item.ISBN</small></p>
+                    @if (item.IsDiscounted && item.DiscountedPrice.HasValue)
+                    {
+                        <p class="card-text">
+                            <del class="text-muted">@item.Price.ToString("C")</del>
+                            <strong class="text-danger">@item.DiscountedPrice?.ToString("C")</strong>
+                        </p>
+                    }
+                    else
+                    {
+                        <p class="card-text"><strong>@item.Price.ToString("C")</strong></p>
+                    }
+                    <p class="card-text">Stok: @item.StockQuantity</p>
+                    <div class="mt-2">
+                        @if (item.IsFeatured)
+                        {
+                            <span class="badge bg-primary me-1">Öne Çıkan</span>
+                        }
+                        @if (item.IsPopular)
+                        {
+                            <span class="badge bg-success me-1">Popüler</span>
+                        }
+                        @if (item.IsDiscounted)
+                        {
+                            <span class="badge bg-danger">İndirimli</span>
+                        }
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="btn-group" role="group">
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Düzenle</a>
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Detaylar</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Sil</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div> 

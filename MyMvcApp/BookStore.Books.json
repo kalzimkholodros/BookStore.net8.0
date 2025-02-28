@@ -1,0 +1,140 @@
+[{
+  "_id": {
+    "$oid": "67c1a42b54a51fab18dbd5c4"
+  },
+  "title": "1984",
+  "author": "George Orwell",
+  "description": "Distopik bir klasik roman. Big Brother'ın gözetlediği bir dünyada geçen, düşündürücü bir eser.",
+  "price": 45.99,
+  "imageUrl": "/images/books/1984.jpg",
+  "stockQuantity": 25,
+  "isbn": "978-0451524935",
+  "category": "Distopya",
+  "isFeatured": true,
+  "isPopular": true,
+  "isDiscounted": false,
+  "createdAt": "2024-03-14T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "67c1a43154a51fab18dbd5c6"
+  },
+  "title": "Suç ve Ceza",
+  "author": "Fyodor Dostoyevski",
+  "description": "Psikolojik bir başyapıt. Raskolnikov'un iç dünyasını ve vicdan muhasebesini anlatan klasik roman.",
+  "price": 89.99,
+  "discountedPrice": 69.99,
+  "imageUrl": "/images/books/suc-ve-ceza.jpg",
+  "stockQuantity": 15,
+  "isbn": "978-0143058144",
+  "category": "Klasik",
+  "isFeatured": false,
+  "isPopular": true,
+  "isDiscounted": true,
+  "createdAt": "2024-03-14T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "67c1a44154a51fab18dbd5c8"
+  },
+  "title": "Harry Potter ve Felsefe Taşı",
+  "author": "J.K. Rowling",
+  "description": "Büyü dünyasına adım atan genç bir büyücünün ilk macerası.",
+  "price": 59.99,
+  "imageUrl": "/images/books/harry-potter.jpg",
+  "stockQuantity": 30,
+  "isbn": "978-0590353427",
+  "category": "Fantastik",
+  "isFeatured": true,
+  "isPopular": true,
+  "isDiscounted": false,
+  "createdAt": "2024-03-14T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "67c1a44754a51fab18dbd5ca"
+  },
+  "title": "Dune",
+  "author": "Frank Herbert",
+  "description": "Bilim kurgu edebiyatının en önemli eserlerinden biri. Arrakis gezegeninde geçen epik bir hikaye.",
+  "price": 79.99,
+  "discountedPrice": 59.99,
+  "imageUrl": "/images/books/dune.jpg",
+  "stockQuantity": 20,
+  "isbn": "978-0441172719",
+  "category": "Bilim Kurgu",
+  "isFeatured": true,
+  "isPopular": false,
+  "isDiscounted": true,
+  "createdAt": "2024-03-14T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "67c1a44f54a51fab18dbd5cc"
+  },
+  "title": "Sherlock Holmes: Dörtlerin İmzası",
+  "author": "Arthur Conan Doyle",
+  "description": "Ünlü dedektif Sherlock Holmes'un en heyecanlı maceralarından biri.",
+  "price": 49.99,
+  "imageUrl": "/images/books/sherlock.jpg",
+  "stockQuantity": 18,
+  "isbn": "978-0140439072",
+  "category": "Polisiye",
+  "isFeatured": false,
+  "isPopular": true,
+  "isDiscounted": false,
+  "createdAt": "2024-03-14T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "67c1a45354a51fab18dbd5ce"
+  },
+  "title": "Yüzüklerin Efendisi: Yüzük Kardeşliği",
+  "author": "J.R.R. Tolkien",
+  "description": "Orta Dünya'da geçen destansı bir macera. Fantastik edebiyatın temel taşlarından.",
+  "price": 99.99,
+  "discountedPrice": 79.99,
+  "imageUrl": "/images/books/lotr.jpg",
+  "stockQuantity": 22,
+  "isbn": "978-0618346257",
+  "category": "Fantastik",
+  "isFeatured": true,
+  "isPopular": true,
+  "isDiscounted": true,
+  "createdAt": "2024-03-14T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "67c1a45854a51fab18dbd5d0"
+  },
+  "title": "Sefiller",
+  "author": "Victor Hugo",
+  "description": "Jean Valjean'ın hayat hikayesi üzerinden adalet ve merhamet kavramlarını sorgulayan klasik eser.",
+  "price": 69.99,
+  "imageUrl": "/images/books/sefiller.jpg",
+  "stockQuantity": 12,
+  "isbn": "978-0451419439",
+  "category": "Klasik",
+  "isFeatured": false,
+  "isPopular": true,
+  "isDiscounted": false,
+  "createdAt": "2024-03-14T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "67c1a45d54a51fab18dbd5d2"
+  },
+  "title": "Neuromancer",
+  "author": "William Gibson",
+  "description": "Siberpunk türünün öncüsü olan roman. Gelecekte geçen bir hacker hikayesi.",
+  "price": 69.99,
+  "discountedPrice": 54.99,
+  "imageUrl": "/images/books/neuromancer.jpg",
+  "stockQuantity": 15,
+  "isbn": "978-0441569595",
+  "category": "Bilim Kurgu",
+  "isFeatured": true,
+  "isPopular": false,
+  "isDiscounted": true,
+  "createdAt": "2024-03-14T00:00:00Z"
+}]
